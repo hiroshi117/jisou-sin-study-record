@@ -1,3 +1,8 @@
-export default function App() {
-  return <div>App.test</div>;
+function App() {
+  return (
+    <>
+      <h1>Hello World</h1>
+    </>
+  );
 }
+export default App;
