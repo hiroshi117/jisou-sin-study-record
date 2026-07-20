@@ -15,13 +15,19 @@ export const App = () => {
 
   return (
     <VStack>
-      <Heading>シン学習記録一覧アプリ</Heading>
-      {records.map((record) => (
-        <Box key={record.id}>
-          <Text>{record.title}</Text>
-          <Text>{record.time}</Text>
-        </Box>
-      ))}
+      {loading ? (
+        <Spinner />
+      ) : (
+        <VStack>
+          <Heading>シン学習記録一覧アプリ</Heading>
+          {records.map((record) => (
+            <Box key={record.id}>
+              <Text>{record.title}</Text>
+              <Text>{record.time}</Text>
+            </Box>
+          ))}
+        </VStack>
+      )}
     </VStack>
   );
 };
