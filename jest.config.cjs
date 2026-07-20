@@ -11,7 +11,7 @@ module.exports = {
           esModuleInterop: true,
           verbatimModuleSyntax: false,
           module: "commonjs",
-          moduleResolution: "node",
+          moduleResolution: "bundler",
           types: ["jest", "@testing-library/jest-dom", "node"],
         },
       },

@@ -1,9 +1,15 @@
-import App from "../App";
-import { render, screen } from "@testing-library/react";
+import { App } from "../App";
+import { render, waitFor } from "@testing-library/react";
+
+jest.mock("../utils/fetchRecords", () => ({
+  fetchRecords: jest.fn().mockResolvedValue([]),
+}));
 
 describe("title", () => {
-  it("should render title", () => {
-    render(<App />);
-    expect(screen.getByText("Hello World")).toBeInTheDocument();
+  it("should render title", async () => {
+    const { getByText } = render(<App />);
+    await waitFor(() => {
+      expect(getByText("シン学習記録一覧アプリ")).toBeInTheDocument();
+    });
   });
 });
