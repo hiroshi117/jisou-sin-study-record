@@ -20,7 +20,7 @@ import { updateRecord } from "../utils/updateRecord";
 
 type FormValues = {
   title: string;
-  time: number;
+  time: number | string;
 };
 
 type Props = {
@@ -46,7 +46,7 @@ export const RecordModal = ({ isOpen, onClose, record, onSaved }: Props) => {
       reset({ title: record.title, time: record.time });
     } else {
       // 新規:空
-      reset({ title: "", time: undefined });
+      reset({ title: "", time: "" });
     }
   }, [isOpen, record, reset]);
 
