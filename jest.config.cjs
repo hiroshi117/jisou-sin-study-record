@@ -1,21 +1,8 @@
 module.exports = {
-  preset: "ts-jest",
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["./jest.setup.ts"],
   transform: {
-    "^.+\\.(ts|tsx)$": [
-      "ts-jest",
-      {
-        tsconfig: {
-          jsx: "react-jsx",
-          esModuleInterop: true,
-          verbatimModuleSyntax: false,
-          module: "commonjs",
-          moduleResolution: "bundler",
-          types: ["jest", "@testing-library/jest-dom", "node"],
-        },
-      },
-    ],
+    "^.+\\.(ts|tsx)$": "babel-jest",
   },
   moduleNameMapper: {
     "\\.(css|less)$": "identity-obj-proxy",

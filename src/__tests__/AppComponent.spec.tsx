@@ -1,6 +1,7 @@
 import { App } from "../App";
 import { render, waitFor } from "@testing-library/react";
 
+jest.mock("../utils/supabaseClient");
 jest.mock("../utils/fetchRecords", () => ({
   fetchRecords: jest.fn().mockResolvedValue([]),
 }));

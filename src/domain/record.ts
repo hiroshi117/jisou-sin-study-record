@@ -1,9 +1,9 @@
 export class Record {
   id: string;
   title: string;
-  time: string;
+  time: number;
 
-  constructor(id: string, title: string, time: string) {
+  constructor(id: string, title: string, time: number) {
     this.id = id;
     this.title = title;
     this.time = time;
